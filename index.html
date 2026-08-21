@@ -1,63 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>毕泽A2 | \(z_Z)/</title>
     <link rel="icon" type="image/png" href="/favicon.jpg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@5.3.0/index.min.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
 </head>
-<style>
-    body {
-        margin: 0;
-        font-family: "Noto Sans SC";
-        font-weight: 500;
-    }
-    #developing {
-        display: grid;
-        place-items: center;
-        padding-top: 20vh;
-        padding-bottom: 20vh;
-    }
-    #zz {
-        font-weight: bold;
-        animation: spin 2s infinite ease-in-out;
-        margin-top: 30px;
-    }
-    @keyframes spin {
-        0% {
-            opacity: 1;
-            scale: 1;
-            transform: translateY(0px);
-        }
-        50% {
-            opacity: 0.5;
-            scale: 1.02;
-            transform: translateY(-25px);
-        }
-        100% {
-            opacity: 1;
-            scale: 1;
-            transform: translateY(0px);
-        }
-    }
-    footer {
-        text-align: center;
-    }
-</style>
 <body>
-    <div id="developing">
-        <h1 style="color: #f5125a;">网站正在施工中！</h1>
-        <p>
-            你可以看看我的
-            <a href="https://space.bilibili.com/3546668689525310">哔哩哔哩</a>
-            或者
-            <a href="https://bza2-kotoron.lofter.com">老福特</a>
-        </p>
-        <p id="zz">\(z_Z)/</p>
+    <div id="home_background">
+        <div class="bg_squares">
+            <div class="bgs1"></div>
+            <div class="bgs2"></div>
+        </div>
+        <canvas class="bg_particles"></canvas>
     </div>
-    <footer>
-        <span style="opacity: .8;">Powerd by GitHub Pages</span>
-    </footer>
+    <div id="home">
+        <div class="greeting">
+            <h1 class="zz_greet">\(z_Z)/</h1>
+            <h2 class="hello_greet">你好！</h2>
+            <div class="welcome_greet">
+                <span class="welcome_text">欢迎访问</span>
+                <img src="/assets/img/avatar.jpg" width="33" height="33" class="avatar">
+                <span class="nickname">毕泽A2</span>
+                <span class="welcome_text">的小站！</span>
+            </div>
+            <div class="types_desc">
+                <span>我是一名绘画博主，不定期在网上发作品，为爱好而生，请多多相处~</span>
+                <span>如果可以，你可以<b>点击下面的平台图标</b>看看我的社交帐号，谢谢www</span>
+                <span>目前我有<b>B站</b>和<b>老福特</b>账号，主营B站</span>
+            </div>
+            <div class="type_area">
+                <span class="desc_typed"></span>
+            </div>
+            <div class="platforms">
+                <a href="https://space.bilibili.com/3546668689525310">
+                    <button class="pbtn"><img src="/assets/icons/bilibili.svg" width="30" height="30"></button>
+                </a>
+                <a href="https://bza2-kotoron.lofter.com">
+                    <button class="pbtn"><img src="/assets/icons/Lofter.svg" width="30" height="30"></button>
+                </a>
+            </div>
+        </div>
+        <div class="entries">
+            <a href="/intro">
+                <button class="entry"><span>自我介绍（施工中）</span></button>
+            </a>
+            <a href="https://www.bilibili.com/opus/1238886022405685285">
+                <button class="entry"><span>我的OC</span></button>
+            </a>
+            <a href="/video">
+                <button class="entry"><span>视频（施工中）</span></button>
+            </a>
+            <a href="/blog">
+                <button class="entry"><span>博客（敬请期待）</span></button>
+            </a>
+            <a href="/log">
+                <button class="entry"><span>网站公告/日志</span></button>
+            </a>
+        </div>
+    </div>
 </body>
+<script src="/scripts/home.js"></script>
 </html>

@@ -1,0 +1,31 @@
+:root {
+    --background-color: #f1f1f1;
+    --background-color-opacity: #f1f1f194;
+    --text-color: #262626;
+    --text-color-second: #464646;
+    --text-color-third: #6b6b6b;
+    --button-color: #191919;
+    --on-button-color: #f0f0f0;
+    --black-bg: #323232bf;
+}
+
+@font-face {
+    font-family: "bzA2 Font";
+    src: url("/assets/font/PangMenZhengDaoXiXianTi-2.woff2") format("woff2");
+}
+
+body {
+    margin: 0;
+    font-family: "bzA2 Font";
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+p, span, a {
+    font-size: 24px;
+}
+
+p {
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+}
