@@ -1,5 +1,5 @@
 #log_page {
-    padding: 4vw;
+    padding: 7vw;
 }
 
 #log_container {
@@ -26,39 +26,6 @@
     }
 }
 
-#loading {
-    z-index: 2;
-    position: absolute;
-    background-color: var(--background-color);
-    width: 100%;
-    height: 100%;
-    .loading_circle {
-        width: 16vw;
-        height: 16vw;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        border: 17px solid var(--text-color);
-        border-radius: 23vw;
-        animation: pop 0.5s infinite cubic-bezier(0.00, 0.37, 0.61, 0.99);
-    }
-}
-
-@keyframes pop {
-    0% {
-        width: 13vw;
-        height: 13vw;
-    }
-    50% {
-        width: 16vw;
-        height: 16vw;
-    }
-    100% {
-        width: 13vw;
-        height: 13vw;
-    }
-}
 
 .logs {
     margin-top: 20px;
@@ -80,17 +47,26 @@
         flex: 1;
     }
 
-    @media screen and (max-width: 800px) {
-        .log_content {
-            font-size: 15px;
-        }
-    }
-
     .arrow {
         margin-left: 20px;
         margin-right: 20px;
         font-weight: bolder;
         color: var(--text-color-third);
+    }
+
+    @media screen and (max-width: 800px) {
+        .log_date {
+            font-size: 15px;
+        }
+
+        .log_content {
+            font-size: 15px;
+        }
+
+        .arrow {
+            margin-left: 8px;
+            margin-right: 8px;
+        }
     }
 }
 

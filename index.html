@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/styles/home.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 </head>
 <body>
     <div id="home_background">
@@ -18,14 +19,21 @@
         </div>
         <canvas class="bg_particles"></canvas>
     </div>
+    <button id="themebtn" class="icon">
+        <span class="mdi mdi-brightness-6"></span>
+    </button>
     <div id="home">
         <div class="greeting">
             <h1 class="zz_greet">\(z_Z)/</h1>
             <h2 class="hello_greet">你好！</h2>
             <div class="welcome_greet">
                 <span class="welcome_text">欢迎访问</span>
-                <img src="/assets/img/avatar.jpg" width="33" height="33" class="avatar">
-                <span class="nickname">毕泽A2</span>
+                <div class="me_container">
+                    <div class="me">
+                        <img src="/assets/img/avatar.jpg" width="33" height="33" class="avatar">
+                        <span class="nickname">毕泽A2</span>
+                    </div>
+                </div>
                 <span class="welcome_text">的小站！</span>
             </div>
             <div class="types_desc">
@@ -38,10 +46,10 @@
             </div>
             <div class="platforms">
                 <a href="https://space.bilibili.com/3546668689525310">
-                    <button class="pbtn"><img src="/assets/icons/bilibili.svg" width="30" height="30"></button>
+                    <button class="pbtn"><img src="" width="30" height="30" id="bilibili"></button>
                 </a>
                 <a href="https://bza2-kotoron.lofter.com">
-                    <button class="pbtn"><img src="/assets/icons/Lofter.svg" width="30" height="30"></button>
+                    <button class="pbtn"><img src="" width="30" height="30" id="lofter"></button>
                 </a>
             </div>
         </div>
@@ -64,5 +72,6 @@
         </div>
     </div>
 </body>
-<script src="/scripts/home.js"></script>
+<script src="/scripts/home.js" type="module"></script>
+<script src="/scripts/theme.js" type="module"></script>
 </html>

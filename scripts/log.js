@@ -1,4 +1,5 @@
 import { get_data } from "./get_data.js"
+import { change_theme } from "./theme.js"
 
 // // 定义日志组件
 // class LogTag extends HTMLElement {
@@ -44,3 +45,6 @@ const load = async () => {
 window.onload = async () => {
     await load()
 }
+
+// 检测主题切换按钮
+document.getElementById("themebtn").addEventListener("click", change_theme)

@@ -6,8 +6,32 @@
     <title>博客 | \(z_Z)/</title>
     <link rel="icon" type="image/png" href="/favicon.jpg">
     <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 </head>
 <body>
+    <button id="themebtn" class="icon">
+        <span class="mdi mdi-brightness-6"></span>
+    </button>
+    <div id="menu_list" style="display: none;">
+        <div id="menu_list_container">
+            <h1><b style="color: rgb(11, 103, 215);">毕泽A2</b>的个人网站</h1>
+            <a href="/">主页</a>
+            <a href="/intro">自我介绍</a>
+            <a href="https://www.bilibili.com/opus/1238886022405685285">我的OC</a>
+            <a href="/video">视频</a>
+            <a class="actived">博客</a>
+            <a href="/log">网站公告、日志</a>
+        </div>
+    </div>
+    <button id="menubt">
+        <span class="mdi mdi-menu icon"></span>
+    </button>
     <h1>敬请期待~</h1>
 </body>
+<script src="/scripts/theme.js" type="module"></script>
+<script src="/scripts/menu.js"></script>
+<script type="module">
+    import { change_theme } from '/scripts/theme.js'
+    document.getElementById("themebtn").addEventListener("click", change_theme)
+</script>
 </html>

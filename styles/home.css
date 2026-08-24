@@ -117,17 +117,31 @@
 
         .welcome_greet {
 
-            .avatar {
-                border-radius: 50px;
-                margin-left: 5px;
-                margin-right: 5px;
-                transform: translateY(7px);
+            .me_container {
+                display: inline-block;
             }
 
-            .nickname {
-                margin-right: 5px;
-                font-weight: bold;
-                color: rgb(11, 103, 215);
+            .welcome_text {
+                display: inline-block;
+            }
+
+            .me {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                transform: translateY(7px);
+
+                .avatar {
+                    border-radius: 50px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+
+                .nickname {
+                    margin-right: 5px;
+                    font-weight: bold;
+                    color: rgb(11, 103, 215);
+                }
             }
         }
 
