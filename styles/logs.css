@@ -10,8 +10,10 @@
     .log_head {
         display: flex;
         flex-direction: row;
+        width: fit-content;
         border-bottom: 4px solid #e3189c;
         animation: fade_down 1s cubic-bezier(0.00, 0.80, 0.25, 1.00);
+        user-select: none;
     }
 }
 

@@ -1,11 +1,9 @@
-const toggle_menu = () => {
-    const menu = document.getElementById("menu_list")
-
-    if (menu.style.display === "none") {
-        menu.style.display = "block"
+const toggle_menu = async () => {
+    if ($("#menu_list").css("display") === "none") {
+        await $("#menu_list").slideDown(200, "swing")
     } else {
-        menu.style.display = "none"
+        await $("#menu_list").slideUp(200, "swing")
     }
 }
 
-document.getElementById("menubt").addEventListener("click", toggle_menu)
+$("#menubt").click(toggle_menu)

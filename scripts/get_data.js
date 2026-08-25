@@ -1,6 +1,6 @@
 // 获取数据
-export const get_data = async (type, target) => {
-    const res = await fetch(`/data/${type}/${target}.json`, {
+export const get_data = async (target) => {
+    const res = await fetch(`/data/${target}/${target}.json`, {
         method: "GET",
         mode: "same-origin",
         credentials: "same-origin",

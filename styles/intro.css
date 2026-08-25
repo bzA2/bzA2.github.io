@@ -1,0 +1,88 @@
+#intro_area {
+    padding-left: 13vw;
+    padding-right: 13vw;
+    padding-top: 7vw;
+    padding-bottom: 7vw;
+
+    .ititle_container {
+        width: 100%;
+
+        .ititle {
+            font-weight: bolder;
+            width: fit-content;
+            border-bottom: 5px solid rgb(25, 109, 255);
+            animation: fade_left 1s cubic-bezier(0.00, 0.80, 0.25, 1.00);
+            user-select: none;
+        }
+    }
+
+    .personal_info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        animation: fade_left 1.3s cubic-bezier(0.00, 0.80, 0.25, 1.00);
+
+        .nickname {
+            font-size: 48px;
+            font-weight: bolder;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 1;
+
+            .alia {
+                color: var(--text-color-third);
+                font-size: 32px;
+                flex: 1;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .nickname {
+                font-size: 38px;
+
+                .alia {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .intro_content {
+        margin-top: 40px;        
+
+        h2 {
+            position: relative;
+            width: fit-content;
+            margin-block-end: 3px;
+            color: var(--background-color);
+            background-color: var(--text-color);
+            padding: 5px;
+            animation: fade_left 1.5s cubic-bezier(0.00, 0.80, 0.25, 1.00);
+            user-select: none;
+        }
+
+        .content, a {
+            margin-block-start: 20px;
+            margin-block-end: 20px;
+            letter-spacing: 5px;
+            font-size: 17px;
+            animation: fade_left 1.7s cubic-bezier(0.00, 0.80, 0.25, 1.00);
+        }
+
+        a {
+            color: rgb(246, 23, 153);
+        }
+    }
+}
+
+@keyframes fade_left {
+    0% {
+        opacity: 0;
+        transform: translateX(20vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

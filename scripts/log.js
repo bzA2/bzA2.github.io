@@ -22,11 +22,10 @@ let data = []
 
 // 加载日志数据
 const load = async () => {
-    const loading = document.getElementById("loading")
-    loading.style.display = ""
+    $("#loading").css("display", "block")
 
-    const res = await get_data("logs", "logs")
-    data = res.logs
+    const res = await get_data("logs")
+    data = (res.logs ? res.logs : []) 
     console.log(data)
 
     // 将数据遍历渲染到页面
@@ -39,12 +38,12 @@ const load = async () => {
         log_con.appendChild(content)
     })
 
-    loading.style.display = "none"
+    $("#loading").css("display", "none")
 }
 
-window.onload = async () => {
+$(document).ready(async () => {
     await load()
-}
+})
 
 // 检测主题切换按钮
-document.getElementById("themebtn").addEventListener("click", change_theme)
+$("#themebtn").click(change_theme)

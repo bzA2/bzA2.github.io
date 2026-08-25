@@ -1,3 +1,4 @@
+import { get_data } from "./get_data.js"
 import { change_theme } from "./theme.js"
 
 const get_theme = () => document.documentElement.getAttribute("theme") === "light"
@@ -25,10 +26,20 @@ const icon_color = () => {
     }
 }
 
+// 让背景斑点适配主题
+const bg_spots = () => {
+    if (!get_theme()) {
+        $("#home").addClass("dark")
+    } else {
+        $("#home").removeClass("dark")
+    }
+}
+
 // 注：因为主页这里换主题不仅换配色，还得重新换图标
 const on_change_theme = () => {
     change_theme()
     icon_color()
+    bg_spots()
 
     Particles.destroy()
 
@@ -43,7 +54,25 @@ const on_change_theme = () => {
     })
 }
 
-document.getElementById("themebtn").addEventListener("click", on_change_theme)
+// 最新作品
+let latest = {}
+
+const get_latest = async () => {
+    $("#loading").css("display", "block")
+
+    // 获取数据
+    const res = await get_data("videos")
+    const temp = (res.videos ? res.videos : [])
+
+    latest = temp[0]
+    document.querySelector(".latest_info > img").src = `/data/videos/covers/${latest.bv}.jpg`
+    document.querySelector(".work_title").innerText = latest.title
+    document.querySelector(".work_title").title = latest.title
+    document.querySelector(".work_date").innerText = latest.date
+    document.querySelector(".l_head > a").href = `https://www.bilibili.com/video/${latest.bv}`
+    
+    $("#loading").css("display", "none")
+}
 
 const typed = new Typed('.desc_typed', {
     stringsElement: '.types_desc',
@@ -52,11 +81,15 @@ const typed = new Typed('.desc_typed', {
     cursorChar: '_'
 })
 
-window.onload = () => {
+$(document).ready(async () => {
+    await get_latest()
     Particles.init({
         selector: ".bg_particles",
         connectParticles: true,
         color: get_particle_color()
     })
     icon_color()
-}
+    bg_spots()
+})
+
+$("#themebtn").click(on_change_theme)

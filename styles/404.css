@@ -1,0 +1,61 @@
+#page_404 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+
+    #page_404_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .text_404 {
+            font-size: 42px;
+            font-weight: bolder;
+        }
+
+        .not_found {
+            color: var(--text-color-third);
+        }
+
+        button {
+            position: relative;
+            margin: 10px;
+            padding: 5px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            span {
+                font-family: "bzA2 Font";
+                color: var(--text-color);
+                transition: color .3s cubic-bezier(0.00, 0.37, 0.61, 0.99);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: var(--text-color);
+                z-index: -1;
+                transition: width .3s cubic-bezier(0.00, 0.37, 0.61, 0.99);
+            }
+
+            &:hover {
+                span {
+                    color: var(--background-color);
+                }
+
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

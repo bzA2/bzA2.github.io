@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh_CN>
+<html lang="zh_CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,76 @@
     <link rel="icon" type="image/png" href="/favicon.jpg">
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/styles/intro.css">
 </head>
 <body>
-    <button id="themebtn" class="icon">
-        <span class="mdi mdi-brightness-6"></span>
-    </button>
+    <noscript>
+        <span class="warn">\(x_X)/</span>
+        <span class="nojs">你似乎禁用了Javascript，本网站需要Javascript才能正常运作，请在设置里启用Javascript</span>
+    </noscript>
     <div id="menu_list" style="display: none;">
         <div id="menu_list_container">
-            <h1><b style="color: rgb(11, 103, 215);">毕泽A2</b>的个人网站</h1>
-            <a href="/">主页</a>
-            <a class="actived">自我介绍</a>
+            <h1 onclick="window.location.href = '/'">
+                <b style="color: rgb(11, 103, 215);">毕泽A2</b>的个人网站
+            </h1>
+            <a class="actived">关于我</a>
             <a href="https://www.bilibili.com/opus/1238886022405685285">我的OC</a>
             <a href="/video">视频</a>
             <a href="/blog">博客</a>
             <a href="/log">网站公告、日志</a>
         </div>
+        <button id="themebtn" class="icon">
+            <span class="mdi mdi-brightness-6"></span>
+        </button>
     </div>
     <button id="menubt">
         <span class="mdi mdi-menu icon"></span>
     </button>
-    <h1>施工中！</h1>
+    <div id="intro_area">
+        <div class="ititle_container">
+            <h1 class="ititle">关于我</h1>
+        </div>
+        <div class="personal_info">
+            <span class="nickname">毕泽A2<span class="alia">（壳拓泷）</span></span>
+            <span class="desc">一名为爱发电的绘画博主</span>
+        </div>
+        <div class="intro_content">
+            <h2>简介</h2>
+            <p class="content">我对绘画有着浓厚的兴趣，热爱同人创作，我从2023年开始接触绘画圈</p>
+            <p class="content">不仅热爱绘画，我还会使用AE制作平面动画、骨骼动画，并且尝试提升</p>
+            <p class="content">混的圈子包括但不限于：<b>术力口、魔法宝贝、Koshian堂</b></p>
+            <p class="content">在绘画工作中，我习惯在自己的作品中<b>壳拓泷</b>这个名字表示我，而其他事项则用<b>毕泽A2</b>表示我</p>
+        </div>
+        <div class="intro_content">
+            <h2>关于本网站</h2>
+            <p class="content">本网站全程由毕泽A2本人开发，且并未使用AI工具辅助</p>
+            <p class="content">网站的UI参考了<a href="https://aidn.jp">daniwellp的个人网站</a>的UI</p>
+            <p class="content">这个网站使用<a href="https://pages.github.com">GitHub Pages</a>进行托管</p>
+            <p class="content">若你在访问本网站时遇到了各种问题，请前往社交平台私信向我报告</p>
+            <p class="content">本网站优先适配电脑端的基于Chromium的浏览器，建议在电脑上的Chromium内核浏览器访问，手机端及非Chromium内核浏览器无法完全适配</p>
+        </div>
+        <div class="intro_content">
+            <h2>使用工具</h2>
+            <p class="content">画世界Pro（绘画工作）</p>
+            <p class="content">Adobe After Effects（动画、视频等）</p>
+        </div>
+        <div class="intro_content">
+            <h2>社交平台</h2>
+            <p class="content"><a href="https://space.bilibili.com/3546668689525310">哔哩哔哩</a></p>
+            <p class="content"><a href="https://bza2-kotoron.lofter.com">老福特（不常在线）</a></p>
+            <p class="content"><a href="https://music.163.com/#/user/home?id=12371435436">网易云音乐</a></p>
+            <p class="content">QQ: 3948348718（请勿随意打扰我）</p>
+        </div>
+        <br>
+        <span style="font-weight: bolder;">\(z_Z)/ 毕泽A2/壳拓泷 编</span>
+    </div>
 </body>
 <script src="/scripts/theme.js" type="module"></script>
 <script src="/scripts/menu.js"></script>
 <script type="module">
     import { change_theme } from '/scripts/theme.js'
-    document.getElementById("themebtn").addEventListener("click", change_theme)
+    // 检测主题切换按钮
+    $("#themebtn").click(change_theme)
 </script>
 </html>

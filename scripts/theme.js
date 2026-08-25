@@ -11,9 +11,11 @@ const init_theme = () => {
 
     // 设置主题
     if (Number(localStorage.getItem("/theme"))) {
-        document.documentElement.setAttribute("theme", "light")
+        $("html").attr("theme", "light")
+        document.querySelector("#themebtn > span").style.setProperty("--rotate", "0deg")
     } else {
-        document.documentElement.setAttribute("theme", "dark")
+        $("html").attr("theme", "dark")
+        document.querySelector("#themebtn > span").style.setProperty("--rotate", "180deg")
     }
 }
 
@@ -27,7 +29,8 @@ export const change_theme = () => {
         localStorage.setItem("/theme", "1")
     }
 
-    document.documentElement.setAttribute("theme", (theme ? "dark" : "light"))
+    $("html").attr("theme", (theme ? "dark" : "light"))
+    document.querySelector("#themebtn > span").style.setProperty("--rotate", (theme ? "180deg" : "0deg"))
 }
 
 init_theme()
