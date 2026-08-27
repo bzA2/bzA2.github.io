@@ -30,7 +30,7 @@
             cursor: pointer;
 
             span {
-                font-family: "bzA2 Font";
+                font-family: "Poppins", "Noto Sans SC", sans-serif;
                 color: var(--text-color);
                 transition: color .3s cubic-bezier(0.00, 0.37, 0.61, 0.99);
             }

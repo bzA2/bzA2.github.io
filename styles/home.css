@@ -311,7 +311,7 @@
             cursor: pointer;
 
             span {
-                font-family: "bzA2 Font";
+                font-family: "Poppins", "Noto Sans SC", sans-serif;
                 letter-spacing: 5px;
                 font-weight: bolder;
                 color: var(--text-color);

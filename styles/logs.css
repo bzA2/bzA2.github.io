@@ -46,6 +46,7 @@
     .log_content {
         font-weight: bold;
         font-size: 23px;
+        letter-spacing: 5px;
         flex: 1;
     }
 
@@ -80,51 +81,5 @@
     100% {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-.back {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 20px;
-    padding: 5px 10px;
-    box-sizing: border-box;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-    span {
-        font-family: "bzA2 Font";
-        font-weight: bolder;
-        letter-spacing: 5px;
-        color: var(--text-color-second);
-        transition: color .3s cubic-bezier(0.00, 0.37, 0.61, 0.99);
-    }
-    
-    &::before {
-        content: '';
-        width: 0;
-        height: 100%;
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: var(--text-color);
-        z-index: -1;
-        transition: width .3s cubic-bezier(0.00, 0.37, 0.61, 0.99);
-    }
-
-    &:hover {
-        
-        &::before {
-            width: 100%;
-        }
-
-        span {
-            color: var(--background-color);
-        }
     }
 }
