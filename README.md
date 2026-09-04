@@ -1,2 +1,2 @@
 # 毕泽A2的个人网站
-正在不断完善中……
+https://bza2.github.io
