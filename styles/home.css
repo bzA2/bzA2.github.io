@@ -331,7 +331,6 @@
                 background-color: var(--text-color);
                 z-index: -1;
                 transition: width .3s cubic-bezier(0.00, 0.37, 0.61, 0.99);
-                transform: skewX(-20deg);
             }
 
             &:hover {

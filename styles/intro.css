@@ -65,7 +65,7 @@
         .content, a {
             margin-block-start: 20px;
             margin-block-end: 20px;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             font-size: 17px;
             animation: fade_left 1.7s cubic-bezier(0.00, 0.80, 0.25, 1.00);
         }
