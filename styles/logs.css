@@ -40,7 +40,7 @@
     .log_date {
         color: var(--text-color-second);
         letter-spacing: 3px;
-        
+        user-select: none;
     }
 
     .log_content {
@@ -55,6 +55,7 @@
         margin-right: 20px;
         font-weight: bolder;
         color: var(--text-color-third);
+        user-select: none;
     }
 
     @media screen and (max-width: 800px) {

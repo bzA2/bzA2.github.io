@@ -3,15 +3,6 @@ import { change_theme } from "./theme.js"
 
 const get_theme = () => document.documentElement.getAttribute("theme") === "light"
 
-// 根据主题选择粒子颜色
-const get_particle_color = () => {
-    if (get_theme()) {
-        return ["#2c2c2c", "#414141", "#7f7f7f"]
-    } else {
-        return ["#f0f0f0", "#bebebe", "#a0a0a0"]
-    }
-}
-
 // 图标颜色
 const icon_color = () => {
     const bili_icon = document.getElementById("bilibili")
@@ -40,18 +31,6 @@ const on_change_theme = () => {
     change_theme()
     icon_color()
     bg_spots()
-
-    Particles.destroy()
-
-    const new_particles = document.createElement("canvas")
-    new_particles.className = "bg_particles"
-    document.getElementById("home_background").appendChild(new_particles)
-
-    Particles.init({
-        selector: ".bg_particles",
-        connectParticles: true,
-        color: get_particle_color()
-    })
 }
 
 // 最新作品
@@ -83,11 +62,6 @@ const typed = new Typed('.desc_typed', {
 
 $(document).ready(async () => {
     await get_latest()
-    Particles.init({
-        selector: ".bg_particles",
-        connectParticles: true,
-        color: get_particle_color()
-    })
     icon_color()
     bg_spots()
 })
