@@ -16,8 +16,15 @@ const load = async () => {
     videos.forEach(video => {
         const template = document.getElementById("video_card")
         const content = template.content.cloneNode(true)
+
+        const onLoad = () => {
+            content.querySelector(".video_cards > .img_bg > .cover").style.opacity = 1
+        }
+
         content.querySelector("a").href = `https://www.bilibili.com/video/${video.bv}`
-        content.querySelector(".video_cards > .cover").src = `/data/videos/covers/${video.bv}.jpg`
+        content.querySelector(".video_cards > .img_bg > .cover").src = `/data/videos/covers/${video.bv}.jpg`
+        content.querySelector(".video_cards > .img_bg > .cover").style.opacity = 0
+        content.querySelector(".video_cards > .img_bg > .cover").onload = onLoad()
         content.querySelector(".video_cards > .title").innerText = video.title
         content.querySelector(".video_cards > .title").title = video.title
         content.querySelector(".video_cards > .date").innerText = video.date

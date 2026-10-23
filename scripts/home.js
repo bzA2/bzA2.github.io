@@ -44,7 +44,14 @@ const get_latest = async () => {
     const temp = (res.videos ? res.videos : [])
 
     latest = temp[0]
-    document.querySelector(".latest_info > img").src = `/data/videos/covers/${latest.bv}.jpg`
+
+    const onLoad = () => {
+        document.querySelector(".latest_info > .img_bg > img").style.opacity = 1
+    }
+
+    document.querySelector(".latest_info > .img_bg > img").src = `/data/videos/covers/${latest.bv}.jpg`
+    document.querySelector(".latest_info > .img_bg > img").style.opacity = 0
+    document.querySelector(".latest_info > .img_bg > img").onload = onLoad
     document.querySelector(".work_title").innerText = latest.title
     document.querySelector(".work_title").title = latest.title
     document.querySelector(".work_date").innerText = latest.date
